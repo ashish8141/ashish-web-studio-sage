@@ -1,3 +1,13 @@
+/* Hero base, moved from shared.css (scoped to this hero; :where keeps the original specificity). Convert together with the .rm-hero overrides below. */
+.rm-hero{position:relative;padding:88px 0 72px;overflow:hidden}
+.rm-hero h1{font-size:clamp(40px,5.2vw,68px);line-height:1.04;letter-spacing:-.04em;max-width:22ch;margin:22px 0 26px}
+:where(.rm-hero) .h-hero-sub{font-size:19px;line-height:1.55;max-width:52ch;color:var(--text)}
+:where(.rm-hero) .h-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;align-items:center}
+@media (max-width:760px){
+  .rm-hero{padding:48px 0 56px}
+  :where(.rm-hero) .h-hero-sub{font-size:17px}
+  :where(.rm-hero) .h-hero-actions .aws-btn{flex:1 1 auto}
+}
 .h-plan{display:flex;flex-direction:column;gap:14px;padding:32px 28px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line)}
 .h-plan--main{border-color:rgba(255,77,46,.55);background:linear-gradient(180deg,rgba(255,77,46,.1),rgba(255,77,46,0) 45%),var(--surface)}
 .h-plan h3{font-size:24px}
@@ -52,7 +62,7 @@
 .rm-badge{font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--paper-ink);background:var(--accent);border-radius:999px;padding:6px 10px}
 .rm-plan-price{font-size:72px;margin-top:6px}
 .rm-plan--side h3{font-size:24px;margin:4px 0 0;color:var(--ink);font-weight:500}
-.rm-plan--side .aws-link{margin-top:auto;color:var(--accent);font-weight:500}
+.rm-plan--side .aws-link{margin-top:auto}
 @media (max-width:1000px){
   .rm-hero-grid{grid-template-columns:1fr;gap:44px}
   .rm-probs{grid-template-columns:repeat(2,1fr)}

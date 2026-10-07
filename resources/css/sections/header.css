@@ -22,7 +22,6 @@ body.aws-nav-open .aws-flyout{transform:translateY(0);visibility:visible}
 @media (max-width:760px){
   .aws-header-in{height:64px}
   .aws-flyout{inset:64px 0 auto 0}
-  .aws-header-actions .aws-btn{display:none}
 }
 .aws-menu .has-mega{position:relative}
 .aws-menu .caret{display:inline-block;width:6px;height:6px;margin-left:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .25s}

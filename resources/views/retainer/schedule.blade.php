@@ -1,11 +1,8 @@
-<section id="process" class="aws-sec rm-calsec">
-  <div class="aws-wrap">
-    <div class="h-cal-top">
-      <div class="aws-sec-head">
-        <x-tag>How it works</x-tag>
-        <h2>Your month, <span class="hl">week by week.</span></h2>
-      </div>
-      <p class="h-cal-lede">What happens every week, every two weeks and every month, including your weekly Zoom call and the five website changes included in the plan.</p>
+<section id="process" class="rm-calsec border-t border-line py-sec">
+  <div class="wrap">
+    <div class="mb-12 flex items-end justify-between gap-10 max-tab:mb-8 max-tab:flex-col max-tab:items-start max-tab:gap-4">
+      <x-section-head tag="How it works" class="mb-0 max-w-[640px]">Your month, <span class="text-accent">week by week.</span></x-section-head>
+      <p class="m-0 max-w-[34ch] text-[17px]/[1.55] text-text">What happens every week, every two weeks and every month, including your weekly Zoom call and the five website changes included in the plan.</p>
     </div>
     <div class="rm-cal" data-wk="0">
       <div class="rm-cal-head" aria-hidden="true"><span>Task</span>@foreach ($weeks as $week => $tasks)<span class="c{{ $week }}">Week {{ $week }}</span>@endforeach</div>

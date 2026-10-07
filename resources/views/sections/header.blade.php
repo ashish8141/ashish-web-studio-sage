@@ -1,12 +1,12 @@
 <header class="aws-header" id="top">
-  <div class="aws-wrap aws-header-in">
-    <a class="aws-brand" href="{{ $homeUrl }}">
+  <div class="wrap aws-header-in">
+    <x-brand :href="$homeUrl">
       @if (has_custom_logo())
         {!! get_custom_logo() !!}
       @else
-        {{ $siteName }}<span>.</span>
+        {{ $siteName }}<span class="text-accent">.</span>
       @endif
-    </a>
+    </x-brand>
 
     <nav aria-label="{{ __('Primary', 'sage') }}">
       <ul id="primary-menu" class="aws-menu">
@@ -23,7 +23,8 @@
                 <div class="aws-mega-cta">
                   <b>Not sure what you need?</b>
                   <span>One short call and an honest recommendation.</span>
-                  <a class="aws-link" href="{{ $bookUrl }}">Book a call &rarr;</a>
+                  {{-- Not x-link: .aws-menu a (header.css) owns colour, padding and transition here. --}}
+                  <a class="aws-link border-b border-line-2 font-mono text-[13px]/none font-medium hover:border-accent" href="{{ $bookUrl }}">Book a call &rarr;</a>
                 </div>
               </div>
             </li>
@@ -35,7 +36,7 @@
     </nav>
 
     <div class="aws-header-actions">
-      <x-button :href="$bookUrl" size="sm">Book a call</x-button>
+      <x-button :href="$bookUrl" size="sm" class="max-md:hidden">Book a call</x-button>
       <button class="aws-burger" type="button" aria-label="{{ __('Menu', 'sage') }}" aria-expanded="false" aria-controls="aws-flyout"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -59,5 +60,5 @@
       @endif
     @endforeach
   </ul>
-  <x-button :href="$bookUrl" style="width:100%">Book a call</x-button>
+  <x-button :href="$bookUrl" class="w-full">Book a call</x-button>
 </div>

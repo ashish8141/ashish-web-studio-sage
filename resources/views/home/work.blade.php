@@ -1,13 +1,8 @@
 <!-- WORK -->
-<section id="work" class="aws-sec" data-reveal>
-  <div class="aws-wrap">
-    <div class="aws-sec-head aws-sec-head--row">
-      <div>
-        <x-tag>Proof of work</x-tag>
-        <h2>Check out what I've <span class="hl">built so far.</span></h2>
-      </div>
-      <a class="aws-link" href="#contact">Discuss your project &rarr;</a>
-    </div>
+{{-- Bottom padding comes from #work in sections/home-work.css. --}}
+<section id="work" class="border-t border-line pt-sec" data-reveal>
+  <div class="wrap">
+    <x-section-head tag="Proof of work">Check out what I've <span class="text-accent">built so far.</span><x-slot:aside><x-link href="#contact">Discuss your project &rarr;</x-link></x-slot:aside></x-section-head>
     <div class="h-work-grid">
       @foreach ($work as $project)
         <a @class(['h-work', 'h-work--more' => $project['more']]) href="{{ $project['url'] }}" target="_blank" rel="noopener">

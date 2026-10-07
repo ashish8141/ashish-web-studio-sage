@@ -32,6 +32,9 @@
   --container-wrap: 1200px;
   --ease-spring: cubic-bezier(.16, 1, .3, 1);
 
+  /* Logo/keyword ticker (x-marquee); keyframes live in sections/shared.css. */
+  --animate-marquee: awsMarq 38s linear infinite;
+
   /* Desktop-first breakpoints: use max-md:, max-lg: … (max-md = up to 760px). */
   --breakpoint-*: initial;
   --breakpoint-sm: 641px;
@@ -47,3 +50,8 @@
   margin-inline: auto;
   padding-inline: var(--spacing-gut);
 }
+
+/* The original CSS used plain :hover rules. Tailwind v4 wraps hover: in @media (hover:hover) by default,
+   which would change touch behaviour, so hover:/group-hover: are plain :hover here.
+   Use [@media(hover:hover)]: where the original rule had that media query. */
+@custom-variant hover (&:hover);

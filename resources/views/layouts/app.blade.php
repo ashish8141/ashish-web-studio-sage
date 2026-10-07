@@ -14,8 +14,8 @@
   <body @php(body_class())>
     @php(wp_body_open())
 
-    <a class="aws-skip" href="#aws-content">{{ __('Skip to content', 'sage') }}</a>
-    <div id="aws-progress" aria-hidden="true"></div>
+    <a class="absolute -left-[9999px] focus:top-4 focus:left-4 focus:z-[100] focus:rounded-[8px] focus:bg-ink focus:px-4 focus:py-2.5 focus:text-paper-ink" href="#aws-content">{{ __('Skip to content', 'sage') }}</a>
+    <div id="aws-progress" class="fixed top-0 left-0 z-[70] h-0.5 w-0 bg-accent" aria-hidden="true"></div>
 
     @include('sections.header')
 

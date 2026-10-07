@@ -1,15 +1,15 @@
 <!-- HERO -->
 <section class="h-hero h-hero--name">
   <div class="h-aurora" aria-hidden="true"><canvas class="h-aurora-gl"></canvas><i></i><i></i><i></i></div>
-  <div class="aws-wrap h-hero-top">
+  <div class="wrap h-hero-top">
     <h1><span class="h-name">Ashish Jat</span> <span class="h-role">Website design and development consultant</span></h1>
     <p class="h-hero-sub">I take your website from brand and design to build and launch on WordPress, Shopify, Webflow and Framer, using AI-native tools to ship in days, not months.</p>
     <div class="h-hero-actions">
-      <a class="aws-btn aws-btn--accent" href="#contact">Book a call <span class="arr">&rarr;</span></a>
-      <a class="aws-btn aws-btn--ghost" href="#work">See my work</a>
+      <x-button href="#contact" arrow>Book a call</x-button>
+      <x-button href="#work" variant="ghost">See my work</x-button>
     </div>
   </div>
-  <div class="aws-wrap">
+  <div class="wrap">
     <div class="h-duo">
       @foreach ($heroCards as $card)
         <a class="h-duo-card" href="{{ $card['url'] }}" target="_blank" rel="noopener">

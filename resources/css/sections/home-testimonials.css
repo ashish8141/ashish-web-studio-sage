@@ -1,6 +1,4 @@
 .h-paper{background:var(--paper);color:var(--paper-text)}
-.h-paper .aws-sec-head h2{color:var(--paper-ink)}
-.h-paper .aws-tag{color:#6d6c65;border-color:var(--paper-line)}
 .h-quotes{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
 .h-quote{display:flex;flex-direction:column;gap:22px;padding:32px;border-radius:var(--r-lg);background:#fbfaf7;border:1px solid var(--paper-line)}
 .h-quote--big{grid-row:span 2;background:var(--paper-ink);border-color:var(--paper-ink)}
@@ -17,8 +15,6 @@
   .h-quote--big{grid-row:auto}
 }
 .h-wol-more{margin-top:28px}
-.h-paper .aws-link{color:var(--paper-ink);border-color:#c9c8c0}
-.h-paper .aws-link:hover{color:var(--accent);border-color:var(--accent)}
 @media (max-width:760px){
   .h-quote{padding:24px}
   .h-quote--big blockquote{font-size:17px}

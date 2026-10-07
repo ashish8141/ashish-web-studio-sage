@@ -1,8 +1,8 @@
 <section class="h-hero rm-hero">
-  <div class="aws-wrap rm-hero-grid">
+  <div class="wrap rm-hero-grid">
     <div>
       <x-tag dot>WordPress maintenance</x-tag>
-      <h1>WordPress maintenance <span class="hl">you can actually see.</span></h1>
+      <h1>WordPress maintenance <span class="text-accent">you can actually see.</span></h1>
       <p class="h-hero-sub">Every month I work through a {{ $total }}-point checklist on your site and share it with you in Notion, ticked off item by item. Plus a Zoom call every week and five website changes a month. No black box.</p>
       <div class="h-hero-actions">
         <x-button href="#pricing" arrow>Get started</x-button>

@@ -1,11 +1,10 @@
 <!-- SERVICES -->
-<section id="services" class="aws-sec h-sol" data-reveal>
-  <div class="aws-wrap">
-    <div class="aws-sec-head">
-      <x-tag>Solution</x-tag>
-      <h2>I bridge the gap between the website you have <span class="hl">and the one your business needs.</span></h2>
-      <p>From brand to design to build to launch, I handle what most businesses split across three vendors.</p>
-    </div>
+<section id="services" class="h-sol border-t border-line py-sec" data-reveal>
+  <div class="wrap">
+    <x-section-head tag="Solution">
+      I bridge the gap between the website you have <span class="text-accent">and the one your business needs.</span>
+      <x-slot:lede>From brand to design to build to launch, I handle what most businesses split across three vendors.</x-slot:lede>
+    </x-section-head>
     <div class="h-sol-panel is-on">
       @foreach ($solutions as $solution)
         <article class="h-sol-card fx-spot">
@@ -16,7 +15,7 @@
       @endforeach
     </div>
     <div class="h-sol-foot">
-      <div class="h-sol-cta"><a class="aws-btn aws-btn--accent" href="#contact">Book a call <span class="arr">&rarr;</span></a><a class="aws-btn aws-btn--ghost" href="#work">See my work</a></div>
+      <div class="h-sol-cta"><x-button href="#contact" arrow>Book a call</x-button><x-button href="#work" variant="ghost">See my work</x-button></div>
     </div>
   </div>
 </section>

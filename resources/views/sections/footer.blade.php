@@ -1,8 +1,8 @@
 <footer class="aws-footer">
-  <div class="aws-wrap">
+  <div class="wrap">
     <div class="aws-foot-grid">
       <div class="aws-foot-brand">
-        <a class="aws-brand" href="{{ $homeUrl }}">{{ $siteName }}<span>.</span></a>
+        <x-brand :href="$homeUrl">{{ $siteName }}<span class="text-accent">.</span></x-brand>
         <p>Web design and development consultant. I figure out what your business actually needs, then build a website that brings in customers.</p>
         <x-button :href="$bookUrl" arrow>Book a call</x-button>
       </div>

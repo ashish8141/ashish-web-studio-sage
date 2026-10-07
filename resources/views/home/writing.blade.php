@@ -1,21 +1,16 @@
 <!-- WRITING -->
 @if ($recentPosts)
-  <section id="writing" class="aws-sec" data-reveal>
-    <div class="aws-wrap">
-      <div class="aws-sec-head aws-sec-head--row">
-        <div><h2>Writing on building <span class="hl">smarter.</span></h2></div>
-        <a class="aws-link" href="{{ $blogUrl }}">All posts &rarr;</a>
-      </div>
+  <section id="writing" class="border-t border-line py-sec" data-reveal>
+    <div class="wrap">
+      <x-section-head>Writing on building <span class="text-accent">smarter.</span><x-slot:aside><x-link :href="$blogUrl">All posts &rarr;</x-link></x-slot:aside></x-section-head>
+      {{-- aws-blog-grid / aws-rel: grid and mobile carousel live in sections/home-writing.css. --}}
       <div class="aws-blog-grid">
         @foreach ($recentPosts as $article)
-          <a class="aws-rel" href="{{ $article['url'] }}">
-            <div class="aws-rel-thumb">{!! $article['thumbnail'] !!}</div>
-            <div class="aws-rel-meta">
-              <div class="aws-rel-kick">{!! esc_html($article['kicker']) !!}</div>
-              <h3 class="aws-rel-t">{!! esc_html($article['title']) !!}</h3>
-              <span class="aws-blog-read">Read the article &rarr;</span>
-            </div>
-          </a>
+          <x-post-card class="aws-rel" :href="$article['url']" read="Read the article &rarr;">
+            <x-slot:thumb>{!! $article['thumbnail'] !!}</x-slot:thumb>
+            <x-slot:kicker>{!! esc_html($article['kicker']) !!}</x-slot:kicker>
+            <x-slot:title>{!! esc_html($article['title']) !!}</x-slot:title>
+          </x-post-card>
         @endforeach
       </div>
     </div>

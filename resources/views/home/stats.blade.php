@@ -1,9 +1,7 @@
 <!-- STATS -->
-<section class="aws-sec h-stats-sec" data-reveal>
-  <div class="aws-wrap">
-    <div class="aws-sec-head">
-      <h2>Eight years of shipping, <span class="hl">in numbers.</span></h2>
-    </div>
+<section class="h-stats-sec border-t border-line py-sec" data-reveal>
+  <div class="wrap">
+    <x-section-head class="mb-9">Eight years of shipping, <span class="text-accent">in numbers.</span></x-section-head>
     <div class="h-stats">
       @foreach ($stats as $stat)
         <div class="h-stat">

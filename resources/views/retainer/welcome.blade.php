@@ -1,6 +1,6 @@
 @if ($subscribed)
   <section class="rm-welcome" id="welcome">
-    <div class="aws-wrap rm-welcome-in">
+    <div class="wrap rm-welcome-in">
       <span class="rm-welcome-ic">{!! $check !!}</span>
       <div>
         <h2>You're subscribed. Welcome aboard.</h2>

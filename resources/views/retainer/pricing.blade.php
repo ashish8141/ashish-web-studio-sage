@@ -1,9 +1,6 @@
-<section id="pricing" class="aws-sec">
-  <div class="aws-wrap">
-    <div class="aws-sec-head">
-      <x-tag>Pricing</x-tag>
-      <h2>One plan. <span class="hl">One flat rate.</span></h2>
-    </div>
+<section id="pricing" class="border-t border-line py-sec">
+  <div class="wrap">
+    <x-section-head tag="Pricing">One plan. <span class="text-accent">One flat rate.</span></x-section-head>
     <div class="r-split rm-pricing">
       <div class="h-plan h-plan--main rm-plan">
         <div class="rm-plan-top"><span class="rm-k">WordPress maintenance</span><span class="rm-badge">One site</span></div>
@@ -26,7 +23,7 @@
         <h3>Bigger work stays outside the plan</h3>
         <p>Your monthly rate covers upkeep and five small changes. Anything that builds something new is scoped and quoted on its own, so the plan never creeps up.</p>
         <ul class="r-list r-list--no"><li>Redesigns and new pages</li><li>New features and integrations</li><li>Content writing</li><li>SEO campaigns</li></ul>
-        <a class="aws-link" href="{{ $projectUrl }}">Ask about a project &rarr;</a>
+        <x-link :href="$projectUrl" tone="accent">Ask about a project &rarr;</x-link>
       </div>
     </div>
   </div>

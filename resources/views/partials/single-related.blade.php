@@ -1,12 +1,13 @@
 @if ($related)
   <div class="aws-related" data-reveal>
-    <div class="aws-sec-head aws-sec-head--row" style="margin-bottom:0"><div><h2>Keep reading</h2></div><a class="aws-link" href="{{ $allPostsUrl }}">All posts &rarr;</a></div>
-    <div class="aws-blog-grid">
+    <x-section-head class="mb-0">Keep reading<x-slot:aside><x-link :href="$allPostsUrl">All posts &rarr;</x-link></x-slot:aside></x-section-head>
+    <div class="aws-blog-grid grid grid-cols-3 gap-4.5 max-lg:grid-cols-2 max-md:grid-cols-1">
       @foreach ($related as $post)
-        <a class="aws-rel" href="{{ $post['url'] }}">
-          <div class="aws-rel-thumb">{!! $post['thumbnail'] !!}</div>
-          <div class="aws-rel-meta"><div class="aws-rel-kick">{!! $post['kicker'] !!}</div><h3 class="aws-rel-t">{!! $post['title'] !!}</h3></div>
-        </a>
+        <x-post-card :href="$post['url']">
+          <x-slot:thumb>{!! $post['thumbnail'] !!}</x-slot:thumb>
+          <x-slot:kicker>{!! $post['kicker'] !!}</x-slot:kicker>
+          <x-slot:title>{!! $post['title'] !!}</x-slot:title>
+        </x-post-card>
       @endforeach
     </div>
   </div>

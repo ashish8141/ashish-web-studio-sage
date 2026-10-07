@@ -1,10 +1,9 @@
-<section id="included" class="aws-sec">
-  <div class="aws-wrap">
-    <div class="aws-sec-head">
-      <x-tag>What you get</x-tag>
-      <h2>Everything your site needs, <span class="hl">in one plan.</span></h2>
-      <p>No add-ons and no surprise invoices. The checklist covers all of it.</p>
-    </div>
+<section id="included" class="border-t border-line py-sec">
+  <div class="wrap">
+    <x-section-head tag="What you get">
+      Everything your site needs, <span class="text-accent">in one plan.</span>
+      <x-slot:lede>No add-ons and no surprise invoices. The checklist covers all of it.</x-slot:lede>
+    </x-section-head>
     <div class="rm-incs rm-grid">
       @foreach ($included as $item)
         <article class="rm-inc fx-spot">

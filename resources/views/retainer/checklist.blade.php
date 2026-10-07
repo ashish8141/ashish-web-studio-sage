@@ -1,11 +1,10 @@
-<section id="checklist" class="aws-sec rm-cl">
-  <div class="aws-wrap rm-cl-grid">
+<section id="checklist" class="rm-cl border-t border-line py-sec">
+  <div class="wrap rm-cl-grid">
     <div class="rm-cl-side">
-      <div class="aws-sec-head">
-        <x-tag>The part that is different</x-tag>
-        <h2>Every check, <span class="hl">ticked off where you can see it.</span></h2>
-        <p>This is the exact checklist I run on your site. It lives in a Notion page shared with you, and every item gets ticked as it is done. Open it any time and you see what was checked, and when.</p>
-      </div>
+      <x-section-head tag="The part that is different">
+        Every check, <span class="text-accent">ticked off where you can see it.</span>
+        <x-slot:lede>This is the exact checklist I run on your site. It lives in a Notion page shared with you, and every item gets ticked as it is done. Open it any time and you see what was checked, and when.</x-slot:lede>
+      </x-section-head>
       <div class="rm-cl-stats">
         <div><b>{{ $groups['fortnightly']['count'] }}</b><span>checks every<br>2 weeks</span></div>
         <div><b>{{ $groups['monthly']['count'] }}</b><span>checks<br>every month</span></div>

@@ -1,14 +1,11 @@
 <!-- PROBLEM -->
-<section class="aws-sec h-chal" data-reveal>
-  <div class="aws-wrap">
-    <div class="aws-sec-head aws-sec-head--row">
-      <div>
-        <x-tag>Challenge</x-tag>
-        <h2>Your business grew up. <span class="hl">Your website didn't.</span></h2>
-        <p>Most sites I'm asked to fix weren't built badly. They were built for a smaller version of the business. Hover or tap a card to see the fix.</p>
-      </div>
-      <button type="button" class="h-ch-switch" aria-pressed="false"><span class="lbl lbl-a">Before</span><span class="track"><span class="knob"></span></span><span class="lbl lbl-b">After</span></button>
-    </div>
+<section class="h-chal py-sec" data-reveal>
+  <div class="wrap">
+    <x-section-head tag="Challenge">
+      Your business grew up. <span class="text-accent">Your website didn't.</span>
+      <x-slot:lede>Most sites I'm asked to fix weren't built badly. They were built for a smaller version of the business. Hover or tap a card to see the fix.</x-slot:lede>
+      <x-slot:aside><button type="button" class="h-ch-switch" aria-pressed="false"><span class="lbl lbl-a">Before</span><span class="track"><span class="knob"></span></span><span class="lbl lbl-b">After</span></button></x-slot:aside>
+    </x-section-head>
     <div class="h-ch-grid">
       @foreach ($challenges as $challenge)
         <article class="h-ch fx-spot" tabindex="0" role="button" aria-pressed="false" aria-label="{{ $challenge['title'] }}. Show the fix">

@@ -14,7 +14,6 @@
   .h-stat:nth-child(odd){padding-left:0}
 }
 .v-hub{fill:var(--ink)}
-.h-stats-sec .aws-sec-head{margin-bottom:36px}
 .h-stat-viz{height:64px;margin-bottom:22px;display:flex;align-items:flex-end}
 .v-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;width:150px;height:auto}
 .v-grid i{display:block;aspect-ratio:1;border-radius:2px;background:#2a2925;transition:background .3s calc(var(--i)*22ms)}
