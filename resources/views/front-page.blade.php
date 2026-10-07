@@ -1,0 +1,17 @@
+@extends('layouts.app')
+
+@section('content')
+  @include('home.hero')
+  @include('home.trust')
+  @include('home.challenge')
+  @include('home.services')
+  @include('home.work')
+  @include('home.band')
+  @include('home.about')
+  @include('home.stats')
+  @include('home.process')
+  @include('home.testimonials')
+  @include('home.faq')
+  @include('home.writing')
+  @include('home.contact')
+@endsection

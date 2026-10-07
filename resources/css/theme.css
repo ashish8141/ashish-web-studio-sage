@@ -1,0 +1,28 @@
+/* Brand tokens, shared by Tailwind utilities (bg-accent, font-serif, ...) and the legacy CSS variables. */
+@theme static {
+  --color-bg: #0e0e0c;
+  --color-surface: #161614;
+  --color-surface-2: #1e1e1b;
+  --color-line: #2c2b27;
+  --color-line-2: #3a3934;
+  --color-ink: #f2f1ee;
+  --color-text: #c7c6c1;
+  --color-muted: #a3a29b;
+  --color-accent: #ff4d2e;
+  --color-accent-2: #ff9a6c;
+  --color-paper: #f2f1ee;
+  --color-paper-ink: #141412;
+  --color-paper-text: #4a4943;
+  --color-paper-line: #dddcd5;
+
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-serif: 'Newsreader', Georgia, serif;
+
+  --radius-sm: 6px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --container-wrap: 1200px;
+  --ease-spring: cubic-bezier(.16, 1, .3, 1);
+}

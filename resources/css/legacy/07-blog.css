@@ -1,0 +1,14 @@
+/* ---------- blog index ---------- */
+.aws-index-head{padding-top:88px;padding-bottom:40px}
+.aws-index-head h1{font-size:clamp(44px,6vw,76px);letter-spacing:-.045em;margin:22px 0 18px}
+.aws-index-head p{font-size:19px;max-width:56ch}
+.aws-feature{display:grid;grid-template-columns:1.2fr 1fr;border-radius:var(--r-lg);overflow:hidden;background:var(--surface);border:1px solid var(--line);margin-bottom:18px;transition:border-color .3s}
+.aws-feature:hover{border-color:var(--line-2)}
+.aws-feature .aws-rel-thumb{aspect-ratio:auto;min-height:320px}
+.aws-feature .aws-rel-meta{padding:36px;justify-content:center}
+.aws-feature .aws-rel-t{font-size:clamp(24px,2.6vw,34px);line-height:1.15}
+.aws-pagination,.navigation.pagination{margin:48px 0 0}
+.nav-links{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font:500 13px var(--mono)}
+.nav-links .page-numbers{min-width:42px;height:42px;padding:0 14px;display:inline-grid;place-items:center;border-radius:999px;border:1px solid var(--line-2);color:var(--text)}
+.nav-links .page-numbers.current,.nav-links .page-numbers:hover{border-color:var(--accent);color:var(--ink)}
+.screen-reader-text{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}

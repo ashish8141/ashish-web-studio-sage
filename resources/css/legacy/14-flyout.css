@@ -1,0 +1,13 @@
+/* ---- mobile flyout: Services sub-menu ---- */
+.aws-flyout{max-height:calc(100vh - 64px);max-height:calc(100dvh - 64px);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.aws-flyout-menu .aws-sub-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;font:500 24px/1.1 var(--sans);letter-spacing:-.02em;color:var(--ink);padding:16px 0;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;cursor:pointer}
+.aws-flyout-menu .aws-sub-toggle .caret{display:inline-block;width:9px;height:9px;margin-right:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s}
+.aws-flyout-menu .aws-sub-toggle[aria-expanded="true"]{color:var(--accent)}
+.aws-flyout-menu .aws-sub-toggle[aria-expanded="true"] .caret{transform:translateY(2px) rotate(225deg)}
+.aws-flyout-menu .aws-sub{list-style:none;margin:0;padding:6px 0 10px;border-bottom:1px solid var(--line)}
+.aws-flyout-menu .aws-sub[hidden]{display:none}
+.aws-flyout-menu .aws-sub a{display:flex;flex-direction:column;gap:3px;padding:11px 0 11px 14px;border-bottom:0;border-left:2px solid var(--line-2);font:500 17px/1.2 var(--sans);letter-spacing:-.01em}
+.aws-flyout-menu .aws-sub a b{font-weight:500;color:var(--ink)}
+.aws-flyout-menu .aws-sub a span{font:400 13.5px/1.35 var(--sans);letter-spacing:0;color:var(--muted)}
+.aws-flyout-menu .aws-sub a:hover b{color:var(--accent)}
+.aws-flyout-menu .aws-sub .aws-sub-all{font-size:15px;color:var(--accent);border-left-color:transparent}

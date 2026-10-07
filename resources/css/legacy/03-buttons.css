@@ -1,0 +1,11 @@
+/* ---------- buttons, tags ---------- */
+.aws-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:500 13px/1 var(--mono);letter-spacing:.02em;padding:16px 24px;border-radius:999px;border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:transform .25s var(--ease),background .2s,border-color .2s,color .2s,box-shadow .25s}
+.aws-btn--accent{background:var(--accent);color:var(--paper-ink)}
+.aws-btn--accent:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,77,46,.28)}
+.aws-btn--ghost{border-color:var(--line-2);color:var(--ink)}
+.aws-btn--ghost:hover{background:var(--surface-2);border-color:var(--muted)}
+.aws-btn--sm{padding:12px 18px}
+.aws-btn .arr{transition:transform .25s var(--ease)}
+.aws-btn:hover .arr{transform:translateX(3px)}
+.aws-tag{display:inline-flex;align-items:center;gap:8px;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:8px 12px}
+.aws-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,77,46,.18)}
