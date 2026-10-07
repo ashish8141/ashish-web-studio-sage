@@ -57,7 +57,7 @@ class Single extends Composer
             'categories' => $this->categories(),
             'title' => get_the_title(),
             'excerpt' => has_excerpt() ? esc_html(get_the_excerpt()) : null,
-            'avatar' => get_avatar(get_the_author_meta('ID'), 44, '', '', ['class' => 'aws-byline-av']),
+            'avatar' => get_avatar(get_the_author_meta('ID'), 44, '', ''),
             'authorName' => get_the_author(),
             'date' => get_the_date(),
             'readingTime' => reading_time(),

@@ -26,6 +26,6 @@
 @import "./sections/home-writing.css" layer(components);
 @import "./sections/blog.css" layer(components);
 /* Unlayered: these style WordPress/plugin-generated markup and must beat block-library and plugin CSS. */
-@import "./sections/article.css";
+@import "./sections/content.css";
 @import "./sections/contact-form.css";
 @import "./sections/retainer.css" layer(components);

@@ -1,0 +1,50 @@
+/* Markup this theme does not author: post/page content inside .aws-prose, comment text, and the WordPress comment form.
+   Unlayered on purpose (see app.css): it must beat the block library's own unlayered CSS. */
+
+/* Post content */
+.aws-prose>*:first-child{margin-top:0}
+.aws-prose p{margin:0 0 24px;font:400 19.5px/1.75 var(--font-serif);color:#dcdbd5}
+.aws-prose h2{scroll-margin-top:96px;margin:52px 0 18px;font:500 31px/1.15 var(--font-sans);letter-spacing:-.03em;color:var(--color-ink)}
+.aws-prose h3{scroll-margin-top:96px;margin:36px 0 12px;font:500 22px/1.25 var(--font-sans);letter-spacing:-.02em;color:var(--color-ink)}
+.aws-prose h4{margin:28px 0 10px;font:500 18px var(--font-sans);color:var(--color-ink)}
+.aws-prose ul,.aws-prose ol{margin:0 0 24px;padding-left:22px}
+.aws-prose li{font:400 19px/1.7 var(--font-serif);color:#dcdbd5;margin-bottom:8px}
+.aws-prose ul{list-style:disc}
+.aws-prose ol{list-style:decimal}
+.aws-prose li::marker{color:var(--color-accent)}
+.aws-prose a{color:var(--color-accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.aws-prose strong{font-weight:600;color:var(--color-ink)}
+.aws-prose code{font:500 15px var(--font-mono);background:var(--color-surface-2);padding:2px 7px;border-radius:6px;color:var(--color-ink)}
+.aws-prose img{border-radius:var(--radius-md);margin:8px 0 28px}
+.aws-prose figure{margin:8px 0 28px}
+.aws-prose figcaption{font:500 12px var(--font-mono);color:var(--color-muted);margin-top:10px;text-align:center}
+.aws-prose blockquote{margin:36px 0;padding:6px 0 6px 26px;border-left:2px solid var(--color-accent)}
+.aws-prose blockquote p{font:italic 400 24px/1.45 var(--font-serif);color:var(--color-ink)}
+.aws-prose pre{margin:8px 0 28px;background:#0a0a09;border:1px solid var(--color-line);color:#e7e6df;font:400 13.5px/1.7 var(--font-mono);padding:18px 18px;overflow-x:auto;border-radius:14px}
+.aws-prose pre code{background:none;padding:0;color:inherit;font-size:13.5px}
+.aws-prose table{width:100%;border-collapse:collapse;margin:8px 0 28px;font-size:15px}
+.aws-prose th,.aws-prose td{border-bottom:1px solid var(--color-line);padding:12px 10px;text-align:left;color:var(--color-text)}
+.aws-prose th{font:500 12px var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--color-muted)}
+.aws-prose hr{border:0;border-top:1px solid var(--color-line);margin:40px 0}
+.aws-prose .wp-block-button__link{background:var(--color-accent);color:var(--color-paper-ink);border-radius:999px;text-decoration:none;font:500 13px var(--font-mono);padding:14px 22px}
+@media (max-width:760px){
+  .aws-prose p,.aws-prose li{font-size:18px}
+}
+
+/* Comment text and nested reply lists (wp_list_comments) */
+.aws-c-body p{font-size:15.5px;margin:6px 0}
+.aws-c-body a{color:var(--color-accent)}
+.aws-comment-list ol{padding-left:40px;list-style:decimal}
+
+/* Comment form (comment_form) */
+.aws-commentform{display:flex;flex-direction:column;gap:16px}
+.aws-commentform textarea,.aws-commentform input[type=text],.aws-commentform input[type=email],.aws-commentform input[type=url]{width:100%;background:var(--color-bg);border:1px solid var(--color-line-2);border-radius:10px;color:var(--color-ink);font:400 16px var(--font-sans);padding:14px 16px}
+.aws-commentform textarea{min-height:130px}
+.aws-commentform p{margin:0}
+.aws-commentform label{font:500 11px var(--font-mono);color:var(--color-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+.aws-commentform .comment-form-cookies-consent{display:flex;gap:10px;align-items:flex-start}
+.aws-commentform .comment-form-cookies-consent input{margin:4px 3px 3px 4px;accent-color:var(--color-accent)}
+.aws-commentform .comment-form-cookies-consent label{text-transform:none;letter-spacing:0;font:400 14px var(--font-sans);display:inline}
+.aws-commentform .form-submit{margin-top:6px}
+.aws-commentform .submit{background:var(--color-accent);color:var(--color-paper-ink);border:0;border-radius:999px;font:500 13px var(--font-mono);padding:16px 26px;cursor:pointer;transition:transform .25s var(--ease-spring),box-shadow .25s}
+.aws-commentform .submit:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,77,46,.28)}
