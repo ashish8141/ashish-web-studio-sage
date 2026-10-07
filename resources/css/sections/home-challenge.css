@@ -1,37 +1,25 @@
-.h-chal .aws-sec-head--row{align-items:flex-end}
-.h-ch-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.h-ch{display:flex;flex-direction:column;gap:10px;padding:14px 14px 26px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);cursor:pointer;transition:border-color .35s,transform .35s var(--ease)}
-.h-ch:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.h-ch h3{font-size:21px;display:flex;gap:12px;align-items:baseline;padding:0 10px}
-.h-ch p{font-size:15.5px;padding:0 10px}
-.h-ch-art{position:relative;border-radius:18px;overflow:hidden;padding:40px 14px 12px;background:radial-gradient(60% 70% at 50% 60%,rgba(179,71,44,.14),transparent 70%),linear-gradient(180deg,#141311,#101010);border:1px solid var(--line);transition:background .6s}
-.h-ch-state{position:absolute;top:14px;left:14px;z-index:2;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.h-ch-state b{display:inline-block;font-weight:500;padding:7px 11px;border-radius:999px;transition:opacity .35s,transform .45s var(--ease)}
-.h-ch-state .bad{color:#e07a5f;border:1px solid rgba(179,71,44,.55);background:rgba(14,14,12,.7)}
-.h-ch-state .good{position:absolute;left:0;top:0;color:var(--paper-ink);background:var(--accent);opacity:0;transform:translateY(8px)}
+/* Challenge cards: only the illustration internals remain here (SVG markup comes from the FrontPage composer).
+   Card, grid, badge and switch styling are utilities in views/home/challenge.blade.php.
+   "Fixed" state = .is-fixed on the card (set by fx.js) or hover on hover-capable devices. */
 .ch-svg .st-good,.ch-svg .st-good-t{opacity:0;transition:opacity .5s .15s}
 .ch-svg .st-bad,.ch-svg .st-bad-t{transition:opacity .4s}
-.ch-svg .sc{transform-box:fill-box;transform-origin:center;transition:transform .6s var(--ease),opacity .4s}
-.ch-svg .gd{transform-box:fill-box;transform-origin:left center;transform:scaleX(.2);opacity:0;transition:transform .7s var(--ease) calc(var(--i)*70ms + 120ms),opacity .4s calc(var(--i)*70ms + 120ms)}
+.ch-svg .sc{transform-box:fill-box;transform-origin:center;transition:transform .6s var(--ease-spring),opacity .4s}
+.ch-svg .gd{transform-box:fill-box;transform-origin:left center;transform:scaleX(.2);opacity:0;transition:transform .7s var(--ease-spring) calc(var(--i)*70ms + 120ms),opacity .4s calc(var(--i)*70ms + 120ms)}
 .i-old{font:700 11px 'Times New Roman',Georgia,serif;fill:#9a9a94;letter-spacing:.02em}
 .i-link{font:400 11px 'Times New Roman',Georgia,serif;fill:#6f8fd8;text-decoration:underline}
 .ch-needle{transform:rotate(-62deg);transition:transform 1.1s cubic-bezier(.34,1.56,.64,1)}
-.ch-shackle{transition:transform .5s var(--ease),stroke .3s;transform-box:fill-box;transform-origin:right bottom}
+.ch-shackle{transition:transform .5s var(--ease-spring),stroke .3s;transform-box:fill-box;transform-origin:right bottom}
 .ch-spin{transform-box:fill-box;transform-origin:center;animation:illSpin 1s linear infinite}
 .ch-dot{fill:#f2f1ee;opacity:0}
 .ch-leak{animation:chLeak 2.8s ease-in infinite;animation-delay:var(--t)}
 @keyframes chLeak{0%{opacity:0;transform:translate(0,0)}10%{opacity:.9}45%{transform:translate(0,48px);opacity:.9}100%{transform:translate(var(--dx),110px);opacity:0}}
-.ch-flow{fill:var(--accent-2);animation:chFlow 2.8s ease-in infinite;animation-delay:var(--t);animation-play-state:paused}
+.ch-flow{fill:var(--color-accent-2);animation:chFlow 2.8s ease-in infinite;animation-delay:var(--t);animation-play-state:paused}
 @keyframes chFlow{0%{opacity:0;transform:translate(0,0)}10%{opacity:1}85%{opacity:1;transform:translate(0,150px)}100%{opacity:0;transform:translate(0,158px)}}
 .ch-glow{filter:drop-shadow(0 0 10px rgba(255,77,46,.5))}
-.ch-r{transition:transform .8s var(--ease)}
+.ch-r{transition:transform .8s var(--ease-spring)}
 .ch-you{transform:translateY(114px)}
 .ch-you-bg{fill:#1a1614;stroke:#4d3327;transition:fill .5s,stroke .5s}
 .ch-you rect:not(.ch-you-bg){opacity:.45;transition:opacity .5s}
-.h-ch.is-fixed{border-color:rgba(255,77,46,.5)}
-.h-ch.is-fixed .h-ch-art{background:radial-gradient(60% 70% at 50% 60%,rgba(255,77,46,.2),transparent 70%),linear-gradient(180deg,#141311,#101010)}
-.h-ch.is-fixed .h-ch-state .bad{opacity:0;transform:translateY(-8px)}
-.h-ch.is-fixed .h-ch-state .good{opacity:1;transform:none}
 .h-ch.is-fixed .ch-svg .st-bad,.h-ch.is-fixed .ch-svg .st-bad-t{opacity:0}
 .h-ch.is-fixed .ch-svg .st-good,.h-ch.is-fixed .ch-svg .st-good-t{opacity:1}
 .h-ch.is-fixed .ch-svg .sc{transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(.6);opacity:0}
@@ -45,9 +33,6 @@
 .h-ch.is-fixed .ch-you-bg{fill:rgba(255,77,46,.12);stroke:#ff4d2e}
 .h-ch.is-fixed .ch-you rect:not(.ch-you-bg){opacity:1}
 @media (hover:hover){
-  .h-ch:hover{border-color:rgba(255,77,46,.5)}
-  .h-ch:hover .h-ch-state .bad{opacity:0;transform:translateY(-8px)}
-  .h-ch:hover .h-ch-state .good{opacity:1;transform:none}
   .h-ch:hover .ch-svg .st-bad,.h-ch:hover .ch-svg .st-bad-t{opacity:0}
   .h-ch:hover .ch-svg .st-good,.h-ch:hover .ch-svg .st-good-t{opacity:1}
   .h-ch:hover .ch-svg .sc{transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(.6);opacity:0}
@@ -61,25 +46,9 @@
   .h-ch:hover .ch-you-bg{fill:rgba(255,77,46,.12);stroke:#ff4d2e}
   .h-ch:hover .ch-you rect:not(.ch-you-bg){opacity:1}
 }
-.h-ch-switch{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:12px;padding:10px 14px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.h-ch-switch:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.h-ch-switch .track{position:relative;width:46px;height:24px;border-radius:999px;background:#2a2925;transition:background .3s}
-.h-ch-switch .knob{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--ink);transition:transform .4s var(--ease)}
-.h-ch-switch .lbl-a{color:var(--ink)}
-.h-ch-switch[aria-pressed="true"] .track{background:var(--accent)}
-.h-ch-switch[aria-pressed="true"] .knob{transform:translateX(22px)}
-.h-ch-switch[aria-pressed="true"] .lbl-a{color:var(--muted)}
-.h-ch-switch[aria-pressed="true"] .lbl-b{color:var(--ink)}
-@media (max-width:760px){
-  .h-ch-grid{grid-template-columns:1fr}
-  .h-ch-art{padding:38px 6px 8px}
-}
 @media (prefers-reduced-motion:reduce){
   .ch-leak,.ch-flow,.ch-spin{animation:none!important;opacity:.8}
 }
 @media (max-width:760px){
-  .h-ch-art .ill{transform:scale(1.1);transform-origin:center 55%}
-  .h-ch-art{padding-top:44px}
-  .h-ch h3{font-size:19px}
+  .h-ch .ill{transform:scale(1.1);transform-origin:center 55%}
 }
-.h-ch-num{display:block;padding:0 10px;margin-bottom:-4px;font:500 12px var(--mono);color:var(--accent)}
