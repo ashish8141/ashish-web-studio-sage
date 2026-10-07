@@ -1,74 +1,16 @@
-/* Floating day counter created by JS on small screens (moved from base.css). */
+/* Home process (14-day calendar). The calendar itself is utilities in home/process.blade.php and home/process/bar.blade.php. */
+
+/* Step icons: the <svg> markup comes from the FrontPage composer. */
+.h-cal-ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* Floating day counter: fx.js creates this element and appends it to <body>, so it cannot carry utilities.
+   Shown up to 900px while the calendar is on screen (.is-on); fx.js scales the <em> progress bar. */
 .h-proc-float{display:none}
-@media (max-width:1024px){
-  .h-proc-float{display:flex;position:fixed;left:50%;top:76px;z-index:44;align-items:baseline;gap:8px;padding:10px 16px 12px;border-radius:999px;background:rgba(22,22,20,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,77,46,.45);box-shadow:0 12px 30px rgba(0,0,0,.4);transform:translate(-50%,-16px);opacity:0;pointer-events:none;transition:opacity .3s,transform .4s var(--ease)}
+@media (max-width:900px){
+  .h-proc-float{display:flex;position:fixed;left:50%;top:76px;z-index:44;align-items:baseline;gap:8px;padding:10px 16px 12px;border-radius:999px;background:rgba(22,22,20,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,77,46,.45);box-shadow:0 12px 30px rgba(0,0,0,.4);transform:translate(-50%,-16px);opacity:0;pointer-events:none;transition:opacity .3s,transform .4s var(--ease-spring)}
   .h-proc-float.is-on{opacity:1;transform:translate(-50%,0)}
-  .h-proc-float b{font:500 18px/1 var(--sans);color:var(--accent);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-  .h-proc-float span{font:500 11px var(--mono);color:var(--muted)}
-  .h-proc-float i{position:absolute;left:16px;right:16px;bottom:5px;height:2px;border-radius:2px;background:var(--line-2);overflow:hidden}
-  .h-proc-float em{position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(0)}
+  .h-proc-float b{font:500 18px/1 var(--font-sans);color:var(--color-accent);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .h-proc-float span{font:500 11px var(--font-mono);color:var(--color-muted)}
+  .h-proc-float i{position:absolute;left:16px;right:16px;bottom:5px;height:2px;border-radius:2px;background:var(--color-line-2);overflow:hidden}
+  .h-proc-float em{position:absolute;inset:0;background:var(--color-accent);transform-origin:left;transform:scaleX(0)}
 }
-@media (max-width:900px){
-  .h-proc-float{display:flex}
-}
-@media (min-width:901px){
-  .h-proc-float{display:none!important}
-}
-.h-step-when{font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--accent);margin-bottom:12px;text-transform:uppercase}
-.h-cal{--gut:40px;--rowh:150px}
-.h-cal-board{position:relative}
-.h-cal-ruler{display:grid;grid-template-columns:var(--gut) 1fr;gap:6px;margin-bottom:10px}
-.h-cal-gut{font:500 10px/28px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.h-cal-days{display:grid;grid-template-columns:repeat(14,1fr)}
-.h-cal-days span{font:500 11px/28px var(--mono);color:var(--muted);text-align:center;border-left:1px solid var(--line);transition:color .3s,background .3s}
-.h-cal-days span:last-child{border-right:1px solid var(--line)}
-.h-cal-days span.is-past{color:var(--text)}
-.h-cal-days span.is-now{color:var(--paper-ink);background:var(--accent)}
-.h-cal-body{position:relative;display:flex;flex-direction:column;gap:10px}
-.h-cal-grid{position:absolute;top:0;bottom:0;left:calc(var(--gut) + 6px);right:0;display:grid;grid-template-columns:repeat(14,1fr);pointer-events:none;z-index:0}
-.h-cal-grid i{border-left:1px dashed var(--line)}
-.h-cal-grid i:last-child{border-right:1px dashed var(--line)}
-.h-cal-grid i:nth-child(6),.h-cal-grid i:nth-child(7),.h-cal-grid i:nth-child(13),.h-cal-grid i:nth-child(14){background:rgba(255,255,255,.012)}
-.h-cal-now{position:absolute;top:-10px;bottom:0;left:calc(var(--gut) + 6px);width:2px;margin-left:-1px;background:var(--accent);z-index:3;pointer-events:none;opacity:0;transform:translateX(0);transition:opacity .3s;box-shadow:0 0 18px rgba(255,77,46,.55)}
-.h-cal-now b{position:absolute;bottom:100%;left:50%;transform:translate(-50%,-2px);white-space:nowrap;font:600 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:var(--paper-ink);padding:5px 7px}
-.h-cal.is-live .h-cal-now{opacity:1}
-.h-cal-row{position:relative;z-index:1;display:grid;grid-template-columns:var(--gut) 1fr;gap:6px;min-height:var(--rowh)}
-.h-cal-lab{background:var(--c);display:flex;align-items:center;justify-content:center}
-.h-cal-lab span{writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#141412}
-.h-cal-track{position:relative}
-.h-cal-bar{position:absolute;top:0;bottom:0;left:var(--l);width:var(--w);background:linear-gradient(90deg,var(--surface) 0%,var(--surface) 45%,color-mix(in srgb,var(--c) 10%,var(--surface)) 100%);border-left:3px solid var(--c);border-right:1px solid color-mix(in srgb,var(--c) 55%,transparent);padding:22px 70px 20px 22px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;transition:background .4s,box-shadow .4s,transform .4s}
-.h-cal-bar::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--c) 22%,transparent));opacity:0;transition:opacity .4s;pointer-events:none}
-.h-cal-bar:hover::after,.h-cal-row.is-active .h-cal-bar::after{opacity:1}
-.h-cal-row.is-active .h-cal-bar{box-shadow:0 18px 40px rgba(0,0,0,.35),0 0 0 1px color-mix(in srgb,var(--c) 40%,transparent)}
-.h-cal-bar .h-step-when{display:inline-block;align-self:flex-start;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 70%,transparent);padding:6px 8px;margin-bottom:14px}
-.h-cal-bar h3{font-size:20px;line-height:1.2;margin:0 0 8px;color:var(--ink);font-weight:500}
-.h-cal-bar p{font-size:14px;line-height:1.5;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;position:relative;z-index:1}
-.h-cal-ico{position:absolute;top:0;right:0;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:var(--surface-2);border-left:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--c);z-index:1}
-.h-cal-ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.h-cal-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
-.h-cal-foot p{margin:0;color:var(--muted);font-size:14px}
-@media (max-width:1100px){
-  .h-cal-bar{padding-right:62px}
-  .h-cal-bar p{-webkit-line-clamp:3}
-  .h-cal{--rowh:170px}
-}
-@media (max-width:900px){
-  .h-cal-ruler,.h-cal-grid,.h-cal-now{display:none}
-  .h-cal{--gut:34px;--rowh:0px}
-  .h-cal-bar{position:relative;left:0;width:100%;padding:20px 64px 20px 18px}
-  .h-cal-bar p{-webkit-line-clamp:unset;display:block}
-  .h-cal-bar h3{font-size:19px}
-  .h-cal-foot{flex-direction:column;align-items:flex-start}
-}
-.h-cal{--rowh:176px}
-.h-cal-bar{padding-right:22px}
-.h-cal-bar p{-webkit-line-clamp:3}
-@media (max-width:900px){
-  .h-cal{--rowh:0px}
-  .h-cal-bar{padding-right:64px}
-  .h-cal-bar p{-webkit-line-clamp:unset}
-}
-.h-cal-now{top:0}
-.h-cal-now b{display:none}
-.h-cal-days,.h-cal-grid{grid-template-columns:repeat(var(--n,14),1fr)}
-.h-cal-ico svg{stroke-width:2.6}
