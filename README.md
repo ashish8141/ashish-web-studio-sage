@@ -27,17 +27,32 @@ resources/
   views/
     layouts/app.blade.php
     sections/            header, footer
-    components/          <x-button>, <x-tag>
+    components/          <x-button>, <x-tag>, <x-link>, <x-section-head>, <x-faq>, <x-post-card>, <x-cta-band>,
+                         <x-contact-block>, <x-marquee>, <x-brand>, and rm-* parts of the maintenance page
     home/                homepage sections
     retainer/            WordPress maintenance page sections
     partials/            blog cards, single post parts, comments, CTA band
   css/
-    app.css              Tailwind entry
-    theme.css            brand tokens (@theme)
-    legacy/              original stylesheet, split by section; removed as sections move to Tailwind
+    app.css              Tailwind entry and import order
+    theme.css            brand tokens (@theme): colours, fonts, radii, spacing, breakpoints, `wrap` utility
+    base.css             element defaults on top of Preflight
+    components/          only what utilities can't express: keyframes, JS-driven state, SVG illustration
+                         internals, and WordPress/plugin-generated markup (post content, comment form, Forminator)
   js/                    app.js (entry), fx.js (GSAP scroll effects), main.js (interactions, hero gradient)
   images/, fonts/
 ```
+
+## Styling conventions
+
+- Styles are Tailwind utility classes in the Blade views. Reach for a token first (`bg-surface`, `text-muted`,
+  `border-line-2`, `font-mono`, `rounded-lg`, `py-sec`, `px-gut`, `ease-spring`), then an arbitrary value.
+- Breakpoints are desktop-first: `max-sm:` (≤640px), `max-md:` (≤760px), `max-tab:` (≤900px), `max-lg:` (≤1024px),
+  `max-xl:` (≤1100px).
+- `hover:` is a plain `:hover` (custom variant in `theme.css`).
+- Layer order is theme, base, components, utilities, so a utility always beats `css/components/*.css`.
+  `content.css` and `contact-form.css` are deliberately unlayered so they beat block-library and plugin styles.
+- Classes such as `aws-btn`, `h-hero`, `h-cal-row` that carry no styles are hooks for `resources/js/fx.js` and
+  `main.js`; keep them when editing markup.
 
 ## Deployment
 
