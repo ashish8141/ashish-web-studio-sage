@@ -9,7 +9,7 @@ if (! process.env.APP_URL) {
 }
 
 export default defineConfig({
-  base: '/wp-content/themes/ashish-web-studio-sage/public/build/',
+  base: `/wp-content/themes/${process.env.THEME_DIR ?? 'ashish-web-studio-sage'}/public/build/`,
   plugins: [
     tailwindcss(),
     laravel({

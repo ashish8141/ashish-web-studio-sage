@@ -1,8 +1,5 @@
-/* ===== Process: 14-day calendar / Gantt ===== */
+.h-step-when{font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--accent);margin-bottom:12px;text-transform:uppercase}
 .h-cal{--gut:40px;--rowh:150px}
-.h-cal-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px}
-.h-cal-top .aws-sec-head{margin-bottom:0;max-width:640px}
-.h-cal-lede{max-width:34ch;color:var(--text);font-size:17px;line-height:1.55;margin:0}
 .h-cal-board{position:relative}
 .h-cal-ruler{display:grid;grid-template-columns:var(--gut) 1fr;gap:6px;margin-bottom:10px}
 .h-cal-gut{font:500 10px/28px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -34,25 +31,28 @@
 .h-cal-ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .h-cal-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
 .h-cal-foot p{margin:0;color:var(--muted);font-size:14px}
-@media (max-width:1100px){.h-cal-bar{padding-right:62px}.h-cal-bar p{-webkit-line-clamp:3}.h-cal{--rowh:170px}}
-@media (max-width:900px){
- .h-cal-top{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:32px}
- .h-cal-ruler,.h-cal-grid,.h-cal-now{display:none}
- .h-cal{--gut:34px;--rowh:0px}
- .h-cal-bar{position:relative;left:0;width:100%;padding:20px 64px 20px 18px}
- .h-cal-bar p{-webkit-line-clamp:unset;display:block}
- .h-cal-bar h3{font-size:19px}
- .h-cal-foot{flex-direction:column;align-items:flex-start}
- .h-proc-float{display:flex}
+@media (max-width:1100px){
+  .h-cal-bar{padding-right:62px}
+  .h-cal-bar p{-webkit-line-clamp:3}
+  .h-cal{--rowh:170px}
 }
-@media (min-width:901px){.h-proc-float{display:none!important}}
-
-.h-cal{--rowh:176px}.h-cal-bar{padding-right:22px}.h-cal-bar p{-webkit-line-clamp:3}
-@media (max-width:900px){.h-cal{--rowh:0px}.h-cal-bar{padding-right:64px}.h-cal-bar p{-webkit-line-clamp:unset}}
-
-.h-cal-now{top:0}.h-cal-now b{display:none}
-
-/* ===== Calendar: variable column count ===== */
+@media (max-width:900px){
+  .h-cal-ruler,.h-cal-grid,.h-cal-now{display:none}
+  .h-cal{--gut:34px;--rowh:0px}
+  .h-cal-bar{position:relative;left:0;width:100%;padding:20px 64px 20px 18px}
+  .h-cal-bar p{-webkit-line-clamp:unset;display:block}
+  .h-cal-bar h3{font-size:19px}
+  .h-cal-foot{flex-direction:column;align-items:flex-start}
+}
+.h-cal{--rowh:176px}
+.h-cal-bar{padding-right:22px}
+.h-cal-bar p{-webkit-line-clamp:3}
+@media (max-width:900px){
+  .h-cal{--rowh:0px}
+  .h-cal-bar{padding-right:64px}
+  .h-cal-bar p{-webkit-line-clamp:unset}
+}
+.h-cal-now{top:0}
+.h-cal-now b{display:none}
 .h-cal-days,.h-cal-grid{grid-template-columns:repeat(var(--n,14),1fr)}
-.h-cal--weeks .h-cal-grid i{background:none!important}
-.h-cal--weeks .h-cal-days span{letter-spacing:.06em;text-transform:uppercase;font-size:10px}
+.h-cal-ico svg{stroke-width:2.6}

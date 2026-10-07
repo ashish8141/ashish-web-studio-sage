@@ -1,10 +1,4 @@
-/*
- * Tailwind is loaded without its Preflight reset for now: the legacy stylesheets below
- * carry their own reset. Each legacy file is removed as its section is rebuilt with utilities.
- */
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme) theme(static);
-@import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss" theme(static);
 
 @source "../../app/**/*.php";
 @source "../**/*.blade.php";
@@ -12,20 +6,26 @@
 
 @import "./fonts.css";
 @import "./theme.css";
+@import "./sections/base.css" layer(base);
 
-/* Legacy styles (order matters: later files override earlier ones). */
-@import "./legacy/01-base.css";
-@import "./legacy/02-header.css";
-@import "./legacy/03-buttons.css";
-@import "./legacy/04-sections.css";
-@import "./legacy/05-hero.css";
-@import "./legacy/06-footer.css";
-@import "./legacy/07-blog.css";
-@import "./legacy/08-article.css";
-@import "./legacy/09-retainer.css";
-@import "./legacy/10-responsive.css";
-@import "./legacy/11-home-v2.css";
-@import "./legacy/12-process-calendar.css";
-@import "./legacy/13-maintenance.css";
-@import "./legacy/14-flyout.css";
-@import "./legacy/15-hero-name.css";
+/* Section styles carried over from the original theme; each file shrinks as its section moves to utilities. */
+@import "./sections/shared.css" layer(components);
+@import "./sections/header.css" layer(components);
+@import "./sections/footer.css" layer(components);
+@import "./sections/home-about.css" layer(components);
+@import "./sections/home-band.css" layer(components);
+@import "./sections/home-challenge.css" layer(components);
+@import "./sections/home-contact.css" layer(components);
+@import "./sections/home-hero.css" layer(components);
+@import "./sections/home-process.css" layer(components);
+@import "./sections/home-services.css" layer(components);
+@import "./sections/home-stats.css" layer(components);
+@import "./sections/home-testimonials.css" layer(components);
+@import "./sections/home-trust.css" layer(components);
+@import "./sections/home-work.css" layer(components);
+@import "./sections/home-writing.css" layer(components);
+@import "./sections/blog.css" layer(components);
+/* Unlayered: these style WordPress/plugin-generated markup and must beat block-library and plugin CSS. */
+@import "./sections/article.css";
+@import "./sections/contact-form.css";
+@import "./sections/retainer.css" layer(components);
