@@ -1,5 +1,1 @@
-.h-band-actions{display:flex;gap:10px;flex-wrap:wrap}
-@media (max-width:760px){
-  .h-band-actions .aws-btn{flex:1}
-}
-#work + .h-band{padding-top:24px}
+/* home/band.blade.php is fully converted to Tailwind utilities; nothing left here (the import in app.css can be dropped). */
