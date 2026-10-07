@@ -6,26 +6,22 @@
 
 @import "./fonts.css";
 @import "./theme.css";
-@import "./sections/base.css" layer(base);
+@import "./base.css" layer(base);
 
-/* Section styles carried over from the original theme; each file shrinks as its section moves to utilities. */
-@import "./sections/shared.css" layer(components);
-@import "./sections/header.css" layer(components);
-@import "./sections/footer.css" layer(components);
-@import "./sections/home-about.css" layer(components);
-@import "./sections/home-band.css" layer(components);
-@import "./sections/home-challenge.css" layer(components);
-@import "./sections/home-contact.css" layer(components);
-@import "./sections/home-hero.css" layer(components);
-@import "./sections/home-process.css" layer(components);
-@import "./sections/home-services.css" layer(components);
-@import "./sections/home-stats.css" layer(components);
-@import "./sections/home-testimonials.css" layer(components);
-@import "./sections/home-trust.css" layer(components);
-@import "./sections/home-work.css" layer(components);
-@import "./sections/home-writing.css" layer(components);
-@import "./sections/blog.css" layer(components);
+/*
+ * What utilities cannot express cleanly: keyframes, JS-driven state sequences, SVG illustration internals
+ * and elements created by scripts. Everything else is utility classes in the Blade views.
+ */
+@import "./components/shared.css" layer(components);
+@import "./components/footer.css" layer(components);
+@import "./components/home-challenge.css" layer(components);
+@import "./components/home-hero.css" layer(components);
+@import "./components/home-process.css" layer(components);
+@import "./components/home-services.css" layer(components);
+@import "./components/home-stats.css" layer(components);
+@import "./components/home-work.css" layer(components);
+@import "./components/blog.css" layer(components);
+@import "./components/retainer.css" layer(components);
 /* Unlayered: these style WordPress/plugin-generated markup and must beat block-library and plugin CSS. */
-@import "./sections/content.css";
-@import "./sections/contact-form.css";
-@import "./sections/retainer.css" layer(components);
+@import "./components/content.css";
+@import "./components/contact-form.css";

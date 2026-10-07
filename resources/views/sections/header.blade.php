@@ -12,9 +12,7 @@
   $bar = 'mx-auto block h-0.5 w-4.5 rounded-[2px] bg-ink [transition:transform_.3s_var(--ease-spring),opacity_.2s]';
 @endphp
 
-{{-- Blur: the legacy build shipped only the -webkit- declaration (its minifier dropped the unprefixed one), so Chromium/Firefox
-     render no blur. Kept as-is for zero visual change; swap for backdrop-blur-[14px] to blur everywhere. --}}
-<header class="sticky top-0 z-50 border-b border-line bg-[rgba(14,14,12,.82)] [-webkit-backdrop-filter:blur(14px)]" id="top">
+<header class="sticky top-0 z-50 border-b border-line bg-[rgba(14,14,12,.82)] backdrop-blur-[14px]" id="top">
   <div class="wrap flex h-18 items-center justify-between gap-6 max-md:h-16">
     <x-brand :href="$homeUrl" class="[&_img]:max-h-[34px] [&_img]:w-auto">
       @if (has_custom_logo())

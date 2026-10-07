@@ -7,7 +7,7 @@
    Shown up to 900px while the calendar is on screen (.is-on); fx.js scales the <em> progress bar. */
 .h-proc-float{display:none}
 @media (max-width:900px){
-  .h-proc-float{display:flex;position:fixed;left:50%;top:76px;z-index:44;align-items:baseline;gap:8px;padding:10px 16px 12px;border-radius:999px;background:rgba(22,22,20,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,77,46,.45);box-shadow:0 12px 30px rgba(0,0,0,.4);transform:translate(-50%,-16px);opacity:0;pointer-events:none;transition:opacity .3s,transform .4s var(--ease-spring)}
+  .h-proc-float{display:flex;position:fixed;left:50%;top:76px;z-index:44;align-items:baseline;gap:8px;padding:10px 16px 12px;border-radius:999px;background:rgba(22,22,20,.92);backdrop-filter:blur(10px);border:1px solid rgba(255,77,46,.45);box-shadow:0 12px 30px rgba(0,0,0,.4);transform:translate(-50%,-16px);opacity:0;pointer-events:none;transition:opacity .3s,transform .4s var(--ease-spring)}
   .h-proc-float.is-on{opacity:1;transform:translate(-50%,0)}
   .h-proc-float b{font:500 18px/1 var(--font-sans);color:var(--color-accent);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
   .h-proc-float span{font:500 11px var(--font-mono);color:var(--color-muted)}
