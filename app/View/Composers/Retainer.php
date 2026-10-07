@@ -36,7 +36,6 @@ class Retainer extends Composer
         return [
             'subscribed' => isset($_GET['subscribed']),
             'price' => self::PRICE,
-            'check' => $this->check(),
             'groups' => $groups,
             'total' => $total,
             'problems' => $this->problems(),
@@ -49,14 +48,6 @@ class Retainer extends Composer
             'projectUrl' => home_url('/#contact'),
             'contactForm' => '[forminator_form id="535"]',
         ];
-    }
-
-    /**
-     * Tick icon used throughout the page.
-     */
-    protected function check(): string
-    {
-        return '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
     }
 
     /**
