@@ -1,4 +1,4 @@
-/* Brand tokens, shared by Tailwind utilities (bg-accent, font-serif, ...) and the legacy CSS variables. */
+/* Brand tokens. Tailwind turns these into utilities (bg-accent, font-serif, py-sec, max-md:…). */
 @theme static {
   --color-bg: #0e0e0c;
   --color-surface: #161614;
@@ -19,10 +19,31 @@
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   --font-serif: 'Newsreader', Georgia, serif;
 
+  /* Only three radii in this design. */
+  --radius-*: initial;
   --radius-sm: 6px;
   --radius-md: 16px;
   --radius-lg: 24px;
 
+  /* Section rhythm and page gutter; both shrink on small screens (see base.css). */
+  --spacing-sec: 96px;
+  --spacing-gut: 24px;
+
   --container-wrap: 1200px;
   --ease-spring: cubic-bezier(.16, 1, .3, 1);
+
+  /* Desktop-first breakpoints: use max-md:, max-lg: … (max-md = up to 760px). */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 641px;
+  --breakpoint-md: 761px;
+  --breakpoint-tab: 901px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-xl: 1101px;
+}
+
+/* Page container: max width, centred, with the responsive gutter. */
+@utility wrap {
+  max-width: var(--container-wrap);
+  margin-inline: auto;
+  padding-inline: var(--spacing-gut);
 }
