@@ -7,8 +7,8 @@
 
     <!-- COVER -->
     @if (has_post_thumbnail())
-      <div class="aws-cover" data-reveal>
-        <div class="aws-cover-inner">{!! get_the_post_thumbnail(null, 'full') !!}</div>
+      <div class="mx-auto mb-3 max-w-[1120px] px-gut" data-reveal>
+        <div class="overflow-hidden rounded-lg border border-line [&>img]:w-full">{!! get_the_post_thumbnail(null, 'full') !!}</div>
       </div>
     @endif
 
@@ -19,11 +19,11 @@
     @include('partials.single-author')
 
     <!-- SHARE DIVIDER -->
-    <div class="aws-share-divider">
-      <div class="aws-rule"></div>
-      <span class="aws-lbl">found this useful? share it</span>
-      @include('partials.single-share', ['buttonStyle' => 'width:34px;height:34px'])
-      <div class="aws-rule"></div>
+    <div class="mx-auto mt-12 flex max-w-[760px] items-center gap-4 px-gut">
+      <div class="h-px flex-1 bg-line"></div>
+      <span class="font-mono text-[11px]/[normal] font-medium tracking-[.06em] whitespace-nowrap text-muted">found this useful? share it</span>
+      @include('partials.single-share', ['shape' => 'small'])
+      <div class="h-px flex-1 bg-line"></div>
     </div>
 
     <!-- NEWSLETTER -->
@@ -33,7 +33,7 @@
     @include('partials.single-related')
 
     <!-- COMMENTS -->
-    <div class="aws-comments">
+    <div class="mx-auto mt-22 max-w-[808px] px-gut pb-sec max-md:mt-14">
       @php(comments_template())
     </div>
   @endwhile
