@@ -1,6 +1,1 @@
-.h-cta-list{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
-.h-cta-list li{display:flex;gap:12px;align-items:baseline;font-size:16px;color:var(--ink)}
-.h-cta-list li b{font:500 12px var(--mono);color:var(--accent)}
-.aws-soc-row{gap:10px}
-.aws-soc{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--text);border:1px solid var(--line-2);background:var(--surface);transition:color .2s,border-color .2s,background .2s,transform .3s var(--ease)}
-.aws-soc:hover{color:var(--paper-ink);background:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
+/* Converted to Tailwind utilities in the Blade views; nothing left here. */
